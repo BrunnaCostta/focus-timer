@@ -43,7 +43,6 @@ const formattedTime = computed(() => {
   return `${minutes}:${seconds}`;
 });
 
-
 onUnmounted(() => {
   clearInterval(interval);
 });
@@ -55,9 +54,9 @@ onUnmounted(() => {
 
     <div class="mt-4 flex gap-4">
       <div class="w-6 h-6 text-white cursor-pointer">
-          <PlayCircleIcon class="w-10 h-10 text-white" v-if="!isCounting" @click="startTimer"  />
-          <PauseCircleIcon class="w-10 h-10 text-white" v-if="isCounting"  @click="stopTimer"/>
-        </div>
+        <PlayCircleIcon class="w-10 h-10 text-white" v-if="!isCounting" @click="startTimer" />
+        <PauseCircleIcon class="w-10 h-10 text-white" v-if="isCounting" @click="stopTimer" />
+      </div>
 
     </div>
   </div>

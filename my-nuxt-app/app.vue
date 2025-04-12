@@ -5,6 +5,8 @@ import cardOne from "./components/Molecules/cardOne.vue";
 import toggleOff from "~/Icons/toggleOff.vue";
 import toggleOne from "~/Icons/toggleOne.vue";
 
+
+
 const tabs = ["Foco", "Descanso curto", "Descanso longo"]
 const currentTab = ref<number>(0);
 
@@ -14,8 +16,9 @@ const isPlaying = ref(false);
 
 const times = [25 * 60, 5 * 60, 15 * 60];
 
-const musicPlayng = () => {
+const musicPlaying = () => {
   isPlaying.value = !isPlaying.value;
+
 }
 
 const classes = [
@@ -68,16 +71,16 @@ const classes = [
           <span class="font-medium">Faça uma <br class="md:hidden">pausa longa.</span>
         </p>
         <img src="./public/blue2.PNG"
-          class="md:w-[220px] md:h-[230px] w-[150px] h-[150px] relative p-[2px] border-none rounded-lg "/>
+          class="md:w-[220px] md:h-[230px] w-[150px] h-[150px] relative p-[2px] border-none rounded-lg " />
       </div>
     </header>
 
 
-    <section :class="{
+    <section  :class="{
       'bg-gradient-to-b from-violet-800 to-black text-white flex justify-center items-center': currentTab === 0,
       'bg-gradient-to-b from-green-500 to-green-950 text-white flex justify-center items-center': currentTab === 1,
       'bg-gradient-to-b from-blue-500 to-blue-900 text-white flex justify-center items-center': currentTab === 2
-    }" class="h-full ">
+    }" class="h-full pb-1 ">
 
       <div :class="{
         'bg-indigo-900 p-10 md:w-[500px] mx-auto rounded-2xl text-base h-auto flex flex-col justify-between w-[350px]': currentTab === 0,
@@ -96,14 +99,14 @@ const classes = [
         <div class="flex justify-center items-center flex-grow">
           <cardOne :activeTab="currentTab" />
         </div>
-        <div class="pt-4">
+        <!-- <div class="pt-4">
           <div class="border-solid border-white pt-8 flex">
-            <toggleOff v-if="!isPlaying" :color="'white'" @click="musicPlayng()" />
-            <toggleOne v-if="isPlaying" :color="'white'" @click="musicPlayng()" />
+            <toggleOff v-if="!isPlaying" :color="'white'" @click="musicPlaying()" />
+            <toggleOne v-if="isPlaying" :color="'white'" @click="musicPlaying()" />
             <p class="px-3">Música: {{ music[currentTab] }}</p>
           </div>
 
-        </div>
+        </div> -->
       </div>
     </section>
     <footer :class="{
